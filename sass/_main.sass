@@ -90,6 +90,7 @@ header
     margin-left: 90px
     position: relative
     top: 15px
+    line-height: 1em !important
 
 
   .header__main--main
@@ -193,20 +194,22 @@ header
 .scrollMenu
   //@extend header
   @extend .top
-  .header_in
-    padding-top: 20px
-  position: fixed
-  z-index: 999
-  width: 100%
-  top: 0
-  left: 0
-  bottom: auto
-  display: none
   height: 60px
   +box
-  background: rgba(100,210,196, 0.8)
+  background: rgba(#fff, 0.8)
+  display: none
   .top
     height: 0
+  .header_in
+    padding-top: 20px
+  &.open
+    position: fixed
+    z-index: 999
+    width: 100%
+    top: 0
+    left: 0
+    bottom: auto
+
 
 
 
@@ -443,6 +446,8 @@ header
   .reviews_in
     @extend %in
     +clr
+  .row
+    margin-bottom: 25px
   .review__item-b
     display: inline-block
     margin-right: 100px
@@ -546,16 +551,70 @@ header
     margin-bottom: 35px
   .work_in
     @extend %in
-    width: 880px
+    width: 900px
     position: relative
     +clr
+  &__item
+    position: relative
+    display: inline-block
+    text-align: center
+    width: 240px
+    height: 180px
+    +border-radius(12px 0 0 12px)
+    +background-clip(padding-box)
+    +background-image(linear-gradient(to bottom, #6395bd 0%, #004581 100%))
+    +box
+    vertical-align: top
+    margin-left: -3px
+    padding: 20px
+    p
+      font-family: 'conv_pfdintextcondpro-light'
+      font-size: 18px
+      color: #ffffff
+      margin-top: 20px
+      line-height: 1.2em
+  .item--first
+    &:after
+      position: absolute
+      content: ""
+      +s(work-next_ico1)
+      top: 70px
+      right: -18px
+      z-index: 1
+  .item--second
+    width: 220px
+    +border-radius(0)
+    +background-image(linear-gradient(to bottom, #6395bd 0%, #6395bd 100%))
+    &:after
+      position: absolute
+      content: ""
+      +s(work-next_ico2)
+      top: 70px
+      right: -20px
+      z-index: 1
+
+  .item--third
+    width: 220px
+    +border-radius(0)
+    &:after
+      position: absolute
+      content: ""
+      +s(work-next_ico1)
+      top: 70px
+      right: -20px
+      z-index: 1
+  .item--fourth
+    width: 220px
+    +border-radius(0 12px 12px 0)
+    +background-image(linear-gradient(to bottom, #6395bd 0%, #6395bd 100%))
+
 
 
 
 
 .order
   margin-top: 75px
-  padding-bottom: 65px
+  padding-bottom: 35px
 
   .order_in
     @extend %in
@@ -564,12 +623,12 @@ header
   &__item
     vertical-align: top
     width: 300px
-    +border-radius(8px)
+    +border-radius(12px)
     +background-clip(padding-box)
-    border: solid 2px #efefef
+    border: solid 2px #e5e5e5
     text-align: center
     padding-top: 25px
-    padding-bottom: 40px
+    padding-bottom: 25px
     display: inline-block
     margin-right: 42px
     position: relative
@@ -595,54 +654,48 @@ header
     img
       display: block
   &__price
-    background: #f97700
-    padding-bottom: 10px
+    background: url(../img/form-price_bg.png) no-repeat
+    height: 70px
+    width: 280px
+    padding-bottom: 20px
+    padding-top: 5px
+    &.first
+      background: url(../img/form-price_bg1.png) no-repeat
     h3
-      font-size: 24px
+      font-size: 18px
       font-weight: normal
-      text-transform: uppercase
       span
         position: relative
-        color: #aa5a0a
-        font-family: 'bebas_neuebook'
+        color: #cde6f0
+        font-family: 'conv_pfdintextcondpro-light'
         &:after
           position: absolute
           content: ""
           border-bottom: 1px solid
-          top: 13px
+          top: 11px
           left: -2px
           right: 0
     h4
       position: relative
       color: #ffffff
       font-size: 36px
-      font-family: 'bebas_neuebold'
+      font-family: 'conv_pfdintextcondpro-light'
       font-weight: normal
       line-height: 20px
       margin-top: 8px
-      &:before
-        position: absolute
-        content: ''
-        border-top: solid 2px #ef9f59
-        top: 10px
-        left: 25px
-        right: 205px
-        height: 0
-      &:after
-        position: absolute
-        content: ''
-        border-top: solid 2px #ef9f59
-        top: 10px
-        right: 25px
-        left: 205px
-        height: 0
 
       span
-        font-family: 'bebas_neuebook'
         color: #ffffff
-
+        font-size: 18px
+  &__more
+    text-transform: uppercase
+    color: #004682
+    +pfl
+    font-size: 18px
+    &:hover
+      text-decoration: none
   &__form
-    margin-top: 40px
+    margin-top: 30px
     input
       width: 250px
       margin-bottom: 10px
@@ -652,6 +705,10 @@ header
 
     button
       margin-top: 10px
+      text-transform: uppercase
+      font-size: 24px
+      font-family: 'conv_pfdintextcondpro-regular'
+      padding: 21px 72px
 
 
 
@@ -661,30 +718,31 @@ header
 
 .bottom
   background: url(../img/bottom_bg.jpg) center center no-repeat
-  height: 780px
+  height: 640px
   @extend header
-  padding-top: 40px
   .header__main--main--bottom
     margin-top: 0
-  .form--bottom
-    background: rgba(#fff, .2)
-  &__watch
-    background: url(../img/bottom_watch.png) no-repeat !important
-  .price--old--bottom
-    color: #ffffff !important
-  .counter--bottom
-    +background-image(linear-gradient(to bottom, rgba(120,170,80, 0) 0%, rgba(#3b731d, .7) 100%))
+    .header__text--bottom
+      margin-top: 80px
+      .aquapel--bottom
+        bottom: -280px
+    .price--bottom
+      top: 229px
+      left: 326px
+      +background-image(linear-gradient(to bottom, #6395bd 0%, #004581 100%))
+      .price_in
+        background: url(../img/price-in_bg--bottom.png) no-repeat
 footer
   box-sizing: border-box
-  height: 150px
+  height: 100px
   @extend %in
   text-align: center
-  padding-top: 45px
+  padding-top: 20px
   p
     font-size: 16px
     color: #787878
     a
-      color: #32aa00
+      color: #466473
       &:hover
         text-decoration: none
 

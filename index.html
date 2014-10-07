@@ -159,7 +159,7 @@
                 <div class="text text1">«Крылья»</div>
                 <div class="text text2">12 см.</div>
                 <div class="text text3">Губка</div>
-                <text class="text text4">Внутри находится капсула</text>
+                <div class="text text4">Внутри находится капсула</div>
             </div>
             <div class="history__text">
                 <p>Aquapel представляет собой небольшой аппликатор,
@@ -322,6 +322,41 @@
     <h2 class="title--small">отзывы наших клиентов</h2>
 
     <div class="reviews_in">
+        <div class="row" id="otherItems" style="display: none">
+            <div class="review__item-b">
+                <div class="review__item">
+
+                    <p>Привет, я купил антидождь, и я не жалею ни на минуту,
+                        советую и рекомендую всем, стекла после дождя
+                        практически сухие, вода собирается в капли,
+                        все прекрасно видно, о дворниках можно забыть!</p>
+
+
+                </div>
+                <div class="review__person">
+                    <div class="review__img"><img src="img/review_img.jpg" alt="person"/></div>
+                    <h3>Дмитрий Иванов</h3>
+                    <h4>Volkswagen Golf</h4>
+                </div>
+            </div>
+            <div class="review__item-b last">
+                <div class="review__item">
+
+                    <p>Привет, я купил антидождь, и я не жалею ни на минуту,
+                        советую и рекомендую всем, стекла после дождя
+                        практически сухие, вода собирается в капли,
+                        все прекрасно видно, о дворниках можно забыть!</p>
+
+
+                </div>
+                <div class="review__person">
+                    <div class="review__img"><img src="img/review_img.jpg" alt="person"/></div>
+                    <h3>Дмитрий Иванов</h3>
+                    <h4>Volkswagen Golf</h4>
+                </div>
+            </div>
+        </div>
+      <div class="row">
         <div class="review__item-b">
             <div class="review__item">
 
@@ -354,8 +389,9 @@
                 <h4>Volkswagen Golf</h4>
             </div>
         </div>
+      </div>
         <div class="review__buttons">
-            <a class="more-reviews" href="#" id="#moreReviews">еще отзывы</a>
+            <a class="more-reviews" id="moreReviews" href="#">еще отзывы</a>
             <a class="add-review" href="#">добавить отзывы</a>
         </div>
 
@@ -372,7 +408,22 @@
 
     <div class="work_in">
 
-
+         <div class="work__item item--first">
+             <div class="work__img"><img src="img/work_img1.png" alt="work"/></div>
+             <p>Сделайте заказ на сайте или по телефону</p>
+         </div>
+        <div class="work__item item--second">
+            <div class="work__img"><img src="img/work_img2.png" alt="work"/></div>
+            <p>Подтверждение  заказа</p>
+        </div>
+        <div class="work__item item--third">
+            <div class="work__img"><img src="img/work_img3.png" alt="work"/></div>
+            <p>Доставка вашего заказа</p>
+        </div>
+        <div class="work__item item--fourth">
+            <div class="work__img"><img src="img/work_img4.png" alt="work"/></div>
+            <p>Оплата товара только после получения</p>
+        </div>
 
     </div>
 
@@ -380,20 +431,53 @@
 
 
 <div class="order">
-    <h2 class="title">с этим товаром покупают</h2>
+    <h2 class="title--small">с этим товаром покупают</h2>
 
     <div class="order_in">
         <div class="order__item">
-            <div class="order__caption">TISSOT COUTURIER QUARTZ</div>
+            <div class="order__caption">название товара</div>
             <div class="order__img"><img src="img/order_watch.jpg" alt="watch"/></div>
-            <div class="order__price">
-                <h3><span>4780 р.</span></h3>
-                <h4>2340 <span>р.</span></h4>
+            <div class="order__price first">
+                <h3><span>4780 руб.</span></h3>
+                <h4>2340 <span>руб.</span></h4>
             </div>
+            <a href="#" class="order__more">узнать подробнее</a>
             <div class="order__form">
                 <form id="form2" action="#" method="post">
                     <input type="text" name="name" class="name required" placeholder="Введите ваше имя">
-                    <input type="text" name="phone" class="phone required" placeholder="Введите Ваш номер телефона">
+                    <input type="text" name="phone" class="phone required" placeholder="Введите ваш номер телефона">
+                    <button class="button">купить</button>
+                </form>
+            </div>
+        </div>
+        <div class="order__item">
+            <div class="order__caption">название товара</div>
+            <div class="order__img"><img src="img/order_watch.jpg" alt="watch"/></div>
+            <div class="order__price">
+                <h3><span>4780 руб.</span></h3>
+                <h4>2340 <span>руб.</span></h4>
+            </div>
+            <a href="#" class="order__more">узнать подробнее</a>
+            <div class="order__form">
+                <form id="form3" action="#" method="post">
+                    <input type="text" name="name" class="name required" placeholder="Введите ваше имя">
+                    <input type="text" name="phone" class="phone required" placeholder="Введите ваш номер телефона">
+                    <button class="button">купить</button>
+                </form>
+            </div>
+        </div>
+        <div class="order__item">
+            <div class="order__caption">название товара</div>
+            <div class="order__img"><img src="img/order_watch.jpg" alt="watch"/></div>
+            <div class="order__price">
+                <h3><span>4780 руб.</span></h3>
+                <h4>2340 <span>руб.</span></h4>
+            </div>
+            <a href="#" class="order__more">узнать подробнее</a>
+            <div class="order__form">
+                <form id="form4" action="#" method="post">
+                    <input type="text" name="name" class="name required" placeholder="Введите ваше имя">
+                    <input type="text" name="phone" class="phone required" placeholder="Введите ваш номер телефона">
                     <button class="button">купить</button>
                 </form>
             </div>
@@ -405,7 +489,83 @@
 
 
 <div class="bottom">
+    <div class="header__main--main header__main--main--bottom">
+        <div class="header__main--main_in">
+            <div class="header__text header__text--bottom">
+                <h1 class="title--small">антидождь</h1>
 
+                <div class="logo"></div>
+
+
+                <div class="aquapel aquapel--bottom"><img src="img/aquapel.png" alt="aquapel"/></div>
+            </div>
+
+            <div class="header__right">
+
+                <div class="form__out">
+                    <div class="form">
+                        <div class="caption">
+                            <h3>успей купить</h3>
+                            <h4>по супер низкой цене</h4>
+
+                            <div class="counter">
+                                <p class="counter__title">до конца акции осталось:</p>
+
+                                <ul class="count_line">
+
+                                    <li>
+                                        <span class="h"></span>
+
+                                        <p>часа</p>
+                                    </li>
+
+                                    <li>
+                                        <span class="m"></span>
+
+                                        <p>минут</p>
+                                    </li>
+
+                                    <li>
+                                        <span class="s last"></span>
+
+                                        <p>секунд</p>
+                                    </li>
+
+                                    <br class="cb">
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="frm" id="form5">
+                            <form action="#" method="post">
+                                <input type="text" name="name" class="name required" placeholder="Введите ваше имя">
+                                <input type="text" name="phone" class="phone required"
+                                       placeholder="Введите ваш телефон">
+                                <button class="button">заказать</button>
+                                <div class="form__bottom">
+
+                                </div>
+
+                            </form>
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="price price--bottom">
+                <div class="price_in">
+                    <span class="price--old">1259 р.</span><br/>
+                    790<br/>
+                    <span>рублей</span>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
 
 </div>
 
