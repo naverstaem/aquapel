@@ -1,0 +1,395 @@
+// # SHORT HOWTO
+// ## Sprites
+//     .whatever
+//          +sized-sprite($icons, coderiver) //or
+// 			+s(codedby) //gets default value for spritemap as $icons
+// ### animation example
+//     +include keyframes(rotate)
+//        from
+//           +rotate(0)
+//        to
+//           +rotate(360)
+// ## animation usage
+//     body:hover
+// 	    +animation(rotate 200s linear infinite)
+// ## animations easing, see easings.net for full list and examples, tnx @ai
+//     transition: all 1.2s ceaser($ease-in)
+// ## gradient example
+//     +background-image(linear-gradient(#232323, #5c5c5c));
+//     +g(#232323, #5c5c5c);
+//	   horizontal
+//     +gh(#232323, #5c5c5c);
+// ## making bw-images
+//     img
+//			@extend %gray
+// ## predefined media-queries: https://github.com/paranoida/sass-mediaqueries
+//     +min-screen(320)
+//			display: none
+// +max-screen(1000), +iphone5, +iphone4, +ipad-retina, +ipad, +hdpi - also available
+//
+// ## use cycles
+//     @for $i from 1 through 3
+//       .item-#{$i}
+//			width: 2em * $i;
+//     @each $s in a,b,c
+// 	    	#{$s}
+//				display: none
+// ## fonts 
+// Save fonts to /css/fonts, after that write (eot, woff, ttf):
+// +font(book, cytiapro-black-webfont)  
+// =book
+// 	font-family: "book", Arial, sans-serif 
+// insert pics into css
+// div
+// 	+pic("blabla.png")
+// span
+// 	+png(blabla)
+// p
+// 	+jpg(bla)
+
+
+//body
+//  font-family: Arial, sans-serif
+//  font-size: 12px
+//  line-height: 1.4
+=pfl
+  font-family: "Conv_PFDinTextCondPro-Light"
+  font-weight: normal
+  font-style: normal
+
+input.error, textarea.error
+  box-shadow: inset 0 0 10px red !important
+label.error
+  display: none !important
+
+
+.icon
+  display: inline-block
+  position: relative
+
+body
+  font-size: 16px
+  line-height: 1.4
+  background-color: #fff
+  color: #1e1e1e
+  +pfl
+.out
+  position: relative
+input, textarea
+  +placeholder
+    font-size: 18px
+    color: #787878
+    +pfl
+%in
+  max-width: 1200px
+  width: 1000px
+  margin-left: auto
+  margin-right: auto
+
+.myFancyClose
+  position: absolute
+  top: -17px
+  right: -18px
+
+.btn
+  display: inline-block
+  +border-radius(16px)
+  +background-clip(border-box)
+  padding: 8px 25px
+  color: white
+  font-size: 18px
+  border: solid 2px #ffffff
+  text-decoration: underline
+  +transition(background, .5s)
+  &:hover
+    color: #13133b
+    background-color: lighten(#ffffff, 10%)
+.title
+  text-align: center
+  font-size: 72px
+  font-family: 'conv_pfdintextcondpro-thinital'
+  line-height: .5em
+  color: #004682
+  text-transform: uppercase
+  font-weight: normal
+  position: relative
+  span
+    font-size: 24px
+.title--small
+  @extend .title
+  font-size: 48px
+  text-transform: none
+  font-family: 'conv_pfdintextcondpro-thin'
+
+
+
+
+
+.counter
+  width: 340px
+  height: 145px
+  +background-image(linear-gradient(to bottom, rgba(#cde5ef, .3) 0%,rgba(#004581, .3)  100%))
+  padding-bottom: 5px
+  margin-top: 0
+  text-align: center
+  display: inline-block
+
+  p
+    color: #ffffff
+    margin-bottom: 5px
+    margin-top: 3px
+    font-size: 14px
+    position: static
+    font-family: 'conv_segoeprintregular'
+    &.counter__title
+      font-family: 'conv_segoeprintregular'
+      margin-bottom: 10px
+      color: #283c50
+  ul
+    list-style: none
+    margin: 0
+    padding: 0
+    display: inline-block
+
+    li
+      float: left
+      margin: 0 10px
+      text-align: center
+      position: relative
+
+      span
+        position: relative
+        +text-shadow(1px 1px 1px rgb(255, 255, 255))
+        display: block
+        font-size: 48px
+        width: 60px
+        height: 90px
+        +box
+        +border-radius(5px)
+        padding-top: 11px
+        padding-right: 2px
+        font-family: 'conv_pfdintextcondpro-regular'
+        color: white
+        +background-clip(padding-box)
+        +box-shadow(inset 0 -4px 0 rgba(30,30,30,.25))
+        +background-image(linear-gradient(to bottom, #bdbdbd 0%, #3b454f 100%))
+        &:after
+          +background-image(linear-gradient(to bottom, rgba(150,150,150,0) 0%,rgba(#000,.5)  100%))
+          position: absolute
+          content: ""
+          top: 41px
+          width: 100%
+          left: 0
+          height: 5px
+
+
+
+.form__out
+
+.form
+  width: 340px
+  height: 500px
+  position: relative
+  +border-radius(20px)
+  +background-clip(padding-box)
+  background-color: rgba(#cde5ef, .6)
+
+    +box
+  .caption
+    box-sizing: border-box
+    height: 260px
+    padding-top: 30px
+    text-align: center
+    h3
+      margin-top: 0
+      margin-bottom: 0
+      font-size: 36px
+      font-weight: normal
+      text-align: center
+      font-family: 'Conv_PFDinTextCondPro-Light'
+      color: #283c50
+      text-transform: none
+      line-height: 1em
+    h4
+      margin-top: 0
+      margin-bottom: 15px
+      font-size: 24px
+      text-align: center
+      font-weight: normal
+      text-transform: none
+      font-family: 'conv_pfdintextcondpro-light'
+      color: #283c50
+
+
+.frm
+  height: 270px
+  padding-top: 30px
+
+  //box-sizing: border-box
+  +box
+
+  h4
+    text-align: center
+    color: #ffffff
+    margin: 5px 0 0
+    font-weight: normal
+    font-family: 'Conv_pfdintextcondpro-light'
+    font-size: 18px
+  h5
+    @extend h4
+    margin: 0
+    font-size: 24px
+    span
+      font-family: 'conv_pfdintextcondpro-regular'
+form
+  margin-top: -10px
+  position: relative
+  text-align: center
+  input
+    padding-left: 20px
+    width: 240px
+    height: 50px
+    display: block
+    margin: auto auto 10px
+    +box
+    font-size: 18px
+    +background-clip(padding-box)
+    +border-radius(5px)
+    border: 2px solid #aec7d1
+    background-color: #fff
+
+
+  .form__bottom
+    text-align: center
+
+
+
+
+
+
+.button
+  margin-top: 0
+  font-size: 36px
+  text-transform: none
+  display: inline-block
+  padding: 13px 59px
+  letter-spacing: 1px
+  border: none
+  font-family: 'conv_pfdintextcondpro-light'
+  color: #ffffff
+  +single-text-shadow()
+  +border-radius(10px)
+  +background-clip(padding-box)
+  background-color: #a8d045
+  +box-shadow(inset 0 -4px 0 rgba(37,55,4,.3))
+  +background-image(linear-gradient(to bottom, #bde559 0%, #639513 60%, #639513 100%))
+
+  &:hover
+    +background-image(linear-gradient(to bottom, #639513 0%, #639513 40%, #bde559 100%))
+    +box-shadow(0 0 0 0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
