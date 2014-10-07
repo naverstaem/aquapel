@@ -222,11 +222,75 @@ header
     position: relative
     width: 1000px
     padding-top: 40px
+    padding-bottom: 60px
     +clr
   &__about
     +clr
+    margin-bottom: 20px
   &__img
     float: left
+    position: relative
+    margin-left: 50px
+    &:before
+      position: absolute
+      content: ""
+      height: 0
+      top: 200px
+      left: -55px
+      right: 10px
+      border-bottom: dotted 2px #9f9f9f
+      +transform(rotate(35deg))
+    .text
+      color: #004682
+      text-align: right
+      font-family: 'conv_pfdintextcondpro-lightital'
+      font-size: 18px
+      position: absolute
+      content: ""
+      &.text1
+        top: 180px
+        left: 15px
+        &:after
+          position: absolute
+          content: ""
+          top: -33px
+          left: 25px
+          height: 3px
+          width: 70px
+          +background-image(linear-gradient(to bottom left, #27bdf9 0%, #004581 100%))
+          +transform(rotate(125deg))
+
+      &.text2
+        top: 220px
+        left: 135px
+        color: #1e1e1e
+      &.text3
+        top: 300px
+        left: 180px
+        &:after
+          position: absolute
+          content: ""
+          top: -33px
+          left: 25px
+          height: 3px
+          width: 70px
+          +background-image(linear-gradient(to bottom left, #27bdf9 0%, #004581 100%))
+          +transform(rotate(125deg))
+      &.text4
+        top: 0
+        left: 270px
+        width: 130px
+        &:after
+          position: absolute
+          content: ""
+          top: 91px
+          left: -47px
+          height: 3px
+          width: 138px
+          +background-image(linear-gradient(to bottom left, #27bdf9 0%, #004581 100%))
+          +transform(rotate(125deg))
+
+
   &__text
     float: right
     width: 50%
@@ -238,11 +302,14 @@ header
     float: left
     text-align: right
     width: 50%
+    margin-top: 40px
     +pfl
     font-size: 18px
+    +clr
     p
       margin-top: 20px
   &__right
+    +clr
     float: right
     img
       display: block
@@ -250,7 +317,10 @@ header
 
 
 
-.specs
+.instruction
+
+  .instruction_in
+    @extend %in
 
 
 .chance
