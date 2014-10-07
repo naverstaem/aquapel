@@ -166,8 +166,15 @@ header .header__main--main .header__right:after, .bottom .header__main--main .he
 .history:after { content: " "; display: table; clear: both; }
 .history .history_in { position: relative; width: 1000px; padding-top: 40px; *zoom: 1; }
 .history .history_in:after { content: " "; display: table; clear: both; }
-.history__img { text-align: left; }
-.history__text { text-align: right; }
+.history__about { *zoom: 1; }
+.history__about:after { content: " "; display: table; clear: both; }
+.history__img { float: left; }
+.history__text { float: right; width: 50%; font-family: "Conv_PFDinTextCondPro-Light"; font-weight: normal; font-style: normal; font-size: 18px; }
+.history__text p { margin-top: 20px; }
+.history__left { float: left; text-align: right; width: 50%; font-family: "Conv_PFDinTextCondPro-Light"; font-weight: normal; font-style: normal; font-size: 18px; }
+.history__left p { margin-top: 20px; }
+.history__right { float: right; }
+.history__right img { display: block; margin-bottom: 20px; }
 
 .chance { background: url(../img/chance_bg.png) center center no-repeat; -moz-background-size: cover; -o-background-size: cover; -webkit-background-size: cover; background-size: cover; height: 500px; }
 .chance .chance_in { width: 960px; }
