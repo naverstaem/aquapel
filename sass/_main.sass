@@ -318,162 +318,237 @@ header
 
 
 .instruction
-
+  +clr
+  padding-bottom: 55px
+  h2
+    margin-bottom: 35px
   .instruction_in
     @extend %in
-
-
-.chance
-  background: url(../img/chance_bg.png) center center no-repeat
-  +background-size(cover)
-  height: 500px
-  .chance_in
-    @extend %in
-    width: 960px
-  &__img
+    +clr
+  &__left
+    width: 380px
     float: left
-    width: 465px
-    height: 500px
-    img
+    +clr
+    .left__img
+      width: 400px
+      height: 250px
+      position: relative
+      img
+        display: block
+      span
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        background: rgba(0,0,0, .6)
+        opacity: 0
+        +transition(background, .5s)
+        &:hover
+          opacity: 1
+    .left__attention
+      margin-top: 25px
+      margin-bottom: 60px
+      .title--attention
+        font-family: 'conv_pfdintextcondpro-lightital'
+        font-size: 24px
+        color: #d21414
+        font-weight: normal
+        text-align: left
+        text-transform: uppercase
+        margin-bottom: 10px
+      p
+        +pfl
+        font-size: 16px
+        color: #3c3c3c
+  &__right
+    float: right
+    +clr
+    article
+      position: relative
       display: block
-  &__text
-    float: left
-    width: 460px
-    margin-left: 25px
-    h2
-      font-size: 72px
-      font-family: 'code_pro_boldregular'
-      color: #ffffff
-      line-height: 60px
-      margin-top: 125px
+      width: 420px
+      +border-radius(5px)
+      background: #e1eff5
+      padding: 20px
       margin-bottom: 20px
-    a
-      text-decoration: none
-    
+      +box
+      color: #1e1e1e
+      h4
+        font-size: 24px
+        font-weight: normal
+        margin-bottom: 10px
+        font-family: 'conv_pfdintextcondpro-lightital'
+      p
+        font-size: 18px
+        font-family: 'conv_pfdintextcondpro-light'
+
+      span
+        position: absolute
+        content: ""
+        background: url(../img/instruction-stage_bg.png) no-repeat
+        width: 130px
+        height: 60px
+        color: #004682
+        top: 10px
+        left: -140px
+        font-size: 24px
+        padding-right: 20px
+        +pfl
+        +box
+        text-align: center
+        line-height: 60px
+
+
+
+
+.benefits
+  +clr
+  padding-bottom: 70px
+  h2
+    margin-bottom: 25px
+  .benefits_in
+    @extend %in
+    +clr
+  &__items
+    float: left
+    width: 480px
+    +clr
+    li
+      margin-top: 20px
+      position: relative
+      padding-left: 60px
+      &:before
+        position: absolute
+        content: ""
+        +s(list_ico)
+        top: 0
+        left: 0
+
+  &__img
+    +clr
+    float: left
+    width: 370px
+    height: 290px
+    margin-top: 60px
+    margin-left: 60px
 
 
 .reviews
   +clr
-  padding-top: 55px
   padding-bottom: 70px
   h2
-    font-family: 'code_pro_lightregular'
-    margin-bottom: 35px
+    margin-bottom: 45px
 
   .reviews_in
     @extend %in
     +clr
+  .review__item-b
+    display: inline-block
+    margin-right: 100px
+    margin-left: 90px
+    &.last
+      margin-right: 0
+      margin-left: 0
+
   .review__item
     +background-clip(padding-box)
-    width: 300px
     position: relative
     display: inline-block
-    margin-right: 42px
-    +background-clip(padding-box)
+    width: 400px
     padding: 23px 18px
-    border: solid 2px #e5e5e5
     +box
     +clr
-    &:last-child
-      margin-right: 0
+    +border-radius(12px)
+    +background-image(linear-gradient(to bottom, #f5f5f5 0%, #e5e5e5 100%))
+
+
     &:after
       position: absolute
       content: ""
-      bottom: -38px
+      bottom: -34px
       left: 20px
       +s(review_popup)
 
-    h3
-      text-align: left
-      color: #fa7800
-      font-size: 24px
-      +pfl
-      margin-bottom: 12px
-      font-weight: normal
+
     p
       +pfl
       color: #1e1e1e
       font-size: 16px
+  .review__person
+    margin-top: 35px
+    margin-left: -90px
+    width: 230px
+    line-height: 1.2em
+    h3
+      font-family: 'conv_pfdintextcondpro-lightital'
+      font-weight: normal
+      font-size: 18px
+      color: #1e325a
+
+    h4
+      @extend h3
+      font-size: 16px
+      color: #5a5a5a
 
 
-.our
-  background: url(../img/our_bg.jpg) center no-repeat
-  +background-size(cover)
-  height: 800px
-  padding-top: 70px
+  .review__img
+    width: 100px
+    height: 100px
+    float: left
+    margin-top: -30px
+    margin-right: 10px
+    img
+      display: block
+      +border-radius(50%)
+
+  .review__buttons
+    width: 420px
+    text-align: center
+    margin: 20px auto 0
+    %r-buttons
+      display: inline-block
+      width: 200px
+      height: 50px
+      +border-radius(8px)
+      +background-clip(padding-box)
+      border: solid 2px rgb(205,230,240)
+      color: #004682
+      font-size: 18px
+      +box
+      padding-top: 12px
+      text-transform: uppercase
+      font-family: 'conv_pfdintextcondpro-light'
+      text-decoration: none
+    .more-reviews
+      @extend %r-buttons
+      &:hover
+        +box-shadow(inset 0 0 3px 3px rgb(205,230,240))
+
+    .add-review
+      @extend %r-buttons
+      position: relative
+      top: -1px
+      margin-left: 13px
+      height: 48px
+      color: #ffffff
+      border: none
+      +background-image(linear-gradient(to bottom, #6395bd 0%, #3b81af 100%))
+      &:hover
+        background: lighten(#6395bd, 10%)
+
+.work
   position: relative
   +clr
   +box
-  h3
-    font-weight: normal
-    color: #ffffff
-    font-size: 36px
-    font-family: 'conv_pfdintextcondpro-thin'
-    text-align: center
-    line-height: 1em
-    text-transform: uppercase
-    margin-bottom: 10px
-  h2
-    color: #ffffff
 
-  .our_in
+  h2
+    margin-bottom: 35px
+  .work_in
     @extend %in
+    width: 880px
     position: relative
     +clr
-  .russia
-    position: relative
-    background: url(../img/russia.png) center center no-repeat
-    width: 860px
-    height: 515px
-    margin: -60px auto 0
-  &__delivery
-    width: 170px
-    color: #ffffff
-    font-family: 'conv_pfdintextcondpro-regular'
-    font-size: 18px
-    position: absolute
-    top: 50%
-    left: 50%
-    +transform(translate(-50%, -50%))
-    margin-top: 60px
-    &:before
-      position: absolute
-      content: ""
-      +s(pin_ico)
-      top: -73px
-      left: -132px
-  &__bottom
-    width: 600px
-    margin: 55px auto 0
-    position: relative
-  &__price
-    width: 180px
-    display: inline-block
-    position: relative
-    margin-right: 170px
-    margin-left: 50px
-    color: #ffffff
-    font-size: 18px
-    font-family: 'conv_pfdintextcondpro-regular'
-    &:before
-      position: absolute
-      top: -8px
-      left: -75px
-      content: ""
-      +s(price_ico)
-  &__support
-    width: 190px
-    display: inline-block
-    position: relative
-    font-size: 18px
-    color: #ffffff
-    font-family: 'conv_pfdintextcondpro-regular'
-    &:before
-      position: absolute
-      top: -5px
-      left: -75px
-      content: ""
-      +s(bubble_ico)
 
 
 
